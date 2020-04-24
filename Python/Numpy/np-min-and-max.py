@@ -1,14 +1,3 @@
-import numpy
-
-n, m = map(int, raw_input().split())
-
-a = []
-for i in range(n):
-	a += map(int, raw_input().split())
-
-a = numpy.array(a)
-a = numpy.reshape(a, (n,m))
-
-a_min = numpy.min(a, axis = 1)
-
-print numpy.max(a_min)
+import numpy as np
+n, m = map(int, input().split())
+print(np.max(np.min(np.array([input().split() for _ in range(n)],int), axis = 1)))
